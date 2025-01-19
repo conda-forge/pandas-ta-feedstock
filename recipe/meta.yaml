@@ -20,6 +20,7 @@ requirements:
     - pip
     - python {{ python_min }}
   run:
+    - numpy <2
     - pandas
     - python >={{ python_min }}
 
