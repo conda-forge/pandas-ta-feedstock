@@ -3,15 +3,15 @@ About pandas-ta-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pandas-ta-feedstock/blob/main/LICENSE.txt)
 
-Home: https://twopirllc.github.io/pandas-ta/
+Home: https://www.pandas-ta.dev
 
 Package license: MIT
 
 Summary: Technical Analysis Indicators - Pandas TA is an easy to use Python 3 Pandas Extension with 130+ Indicators
 
-Development: https://github.com/twopirllc/pandas-ta
+Development: https://www.pandas-ta.dev/support/bugs-and-features/
 
-Documentation: https://twopirllc.github.io/pandas-ta/
+Documentation: https://www.pandas-ta.dev/api/
 
 Pandas Technical Analysis (Pandas TA) is an easy to use library that
 leverages the Pandas package with more than 130 Indicators and
