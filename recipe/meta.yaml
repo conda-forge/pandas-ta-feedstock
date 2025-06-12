@@ -1,5 +1,5 @@
 {% set name = "pandas-ta" %}
-{% set version = "0.3.14b" %}
+{% set version = "0.4.26b" %}
 
 
 package:
@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pandas_ta-{{ version }}.tar.gz
-  sha256: 0fa35aec831d2815ea30b871688a8d20a76b288a7be2d26cc00c35cd8c09a993
+  url: https://www.pandas-ta.dev/assets/zip/pandas_ta-0.4.26b0.tar.gz
+  sha256: 0fd16f73359020499dc601f3954ef77ca1a06cb8eba6354fafc398e324fa2c87
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -20,14 +20,17 @@ requirements:
     - pip
     - python {{ python_min }}
   run:
-    - numpy <2
-    - pandas
+    - numba >=0.60.0
+    - numpy >=2.1.0
+    - pandas >=2.2.3
     - python >={{ python_min }}
+    - setuptools >=75.7.0
+    - tqdm >=4.67.1
 
 test:
   imports:
     - pandas_ta
-    - pandas_ta.candles
+    - pandas_ta.candle
   commands:
     - pip check
   requires:
@@ -35,7 +38,7 @@ test:
     - python {{ python_min }}
 
 about:
-  home: https://twopirllc.github.io/pandas-ta/
+  home: https://www.pandas-ta.dev
   license: MIT
   license_family: MIT
   license_file: LICENSE
@@ -49,8 +52,8 @@ about:
     Divergence (macd), Hull Exponential Moving Average (hma), Bollinger
     Bands (bbands), On-Balance Volume (obv), Aroon & Aroon Oscillator
     (aroon), Squeeze (squeeze) and many more.
-  doc_url: https://twopirllc.github.io/pandas-ta/
-  dev_url: https://github.com/twopirllc/pandas-ta
+  doc_url: https://www.pandas-ta.dev/api/
+  dev_url: https://www.pandas-ta.dev
 
 extra:
   recipe-maintainers:
