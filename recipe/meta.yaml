@@ -53,7 +53,7 @@ about:
     Bands (bbands), On-Balance Volume (obv), Aroon & Aroon Oscillator
     (aroon), Squeeze (squeeze) and many more.
   doc_url: https://www.pandas-ta.dev/api/
-  dev_url: https://www.pandas-ta.dev
+  dev_url: https://www.pandas-ta.dev/support/bugs-and-features/
 
 extra:
   recipe-maintainers:
