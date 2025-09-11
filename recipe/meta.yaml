@@ -1,5 +1,5 @@
 {% set name = "pandas-ta" %}
-{% set version = "0.4.26b" %}
+{% set version = "0.4.67b" %}
 {% set python_min = "3.12" %}
 
 
@@ -8,8 +8,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://www.pandas-ta.dev/assets/zip/pandas_ta-0.4.26b0.tar.gz
-  sha256: 0fd16f73359020499dc601f3954ef77ca1a06cb8eba6354fafc398e324fa2c87
+  url: https://www.pandas-ta.dev/assets/zip/pandas_ta-0.4.67b0.tar.gz
+  sha256: 07c1045f6ead9f82e9ebbbd74c60f75dcd82620bac0aa7ef6434f4faa80ef217
 
 build:
   number: 0
@@ -20,12 +20,12 @@ requirements:
   host:
     - pip
     - python {{ python_min }}
+    - hatchling
   run:
-    - numba >=0.60.0
-    - numpy >=2.1.0
-    - pandas >=2.2.3
+    - numba >=0.61.2
+    - numpy >=2.2.6
+    - pandas >=2.3.2
     - python >={{ python_min }}
-    - setuptools >=75.7.0
     - tqdm >=4.67.1
 
 test:
