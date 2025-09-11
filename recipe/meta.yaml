@@ -20,6 +20,7 @@ requirements:
   host:
     - pip
     - python {{ python_min }}
+    - hatchling
   run:
     - numba >=0.61.2
     - numpy >=2.2.6
