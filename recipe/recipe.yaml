@@ -1,60 +1,61 @@
-{% set name = "pandas-ta" %}
-{% set version = "0.4.71b" %}
-{% set python_min = "3.12" %}
+schema_version: 1
 
+context:
+  name: pandas-ta
+  version: 0.4.71b
+  python_min: "3.12"
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: ${{ name|lower }}
+  version: ${{ version }}
 
 source:
   url: https://www.pandas-ta.dev/assets/zip/pandas_ta-0.4.71b0.tar.gz
   sha256: 782ef8a874d2e0bdf80f445136617bda084f1fc5d14d3b1c525b282a152de37a
 
 build:
-  number: 0
+  number: 1
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: ${{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python {{ python_min }}
+    - python ${{ python_min }}.*
     - hatchling
   run:
     - numba >=0.61.2
     - numpy >=2.2.6
     - pandas >=2.3.2
-    - python >={{ python_min }}
+    - python >=${{ python_min }}
     - tqdm >=4.67.1
 
-test:
-  imports:
-    - pandas_ta
-    - pandas_ta.candle
-  commands:
-    - pip check
-  requires:
-    - pip
-    - python {{ python_min }}
+tests:
+  - python:
+      imports:
+        - pandas_ta
+        - pandas_ta.candle
+      pip_check: true
+      python_version:
+        - ${{ python_min }}
+        - "*"
 
 about:
-  home: https://www.pandas-ta.dev
   license: MIT
-  license_family: MIT
   license_file: LICENSE
-  summary: 'Technical Analysis Indicators - Pandas TA is an easy to use Python 3 Pandas Extension with 130+ Indicators'
+  summary: Technical Analysis Indicators - Pandas TA is an easy to use Python 3 Pandas Extension with 130+ Indicators
   description: |
     Pandas Technical Analysis (Pandas TA) is an easy to use library that
-    leverages the Pandas package with more than 130 Indicators and 
+    leverages the Pandas package with more than 130 Indicators and
     Utility functions and more than 60 TA Lib Candlestick Patterns. Many
     commonly used indicators are included, such as Candle Pattern
     (cdl_pattern), Simple Moving Average (sma) Moving Average Convergence
     Divergence (macd), Hull Exponential Moving Average (hma), Bollinger
     Bands (bbands), On-Balance Volume (obv), Aroon & Aroon Oscillator
     (aroon), Squeeze (squeeze) and many more.
-  doc_url: https://www.pandas-ta.dev/api/
-  dev_url: https://www.pandas-ta.dev/support/bugs-and-features/
+  homepage: https://www.pandas-ta.dev
+  repository: https://www.pandas-ta.dev/support/bugs-and-features/
+  documentation: https://www.pandas-ta.dev/api/
 
 extra:
   recipe-maintainers:
